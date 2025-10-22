@@ -1,0 +1,321 @@
+/* Manav Seva Charitable Trust Design System - Vanilla Macaron Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Vanilla Macaron-Inspired Brand Colors - Warm & Sophisticated */
+    --cream: 45 25% 97%;            /* #FAF8F5 - Pure cream macaron shell */
+    --vanilla: 42 20% 94%;          /* #F5F2ED - Soft vanilla undertone */
+    --warm-beige: 38 15% 88%;       /* #E8E2D8 - Warm beige macaron */
+    --caramel: 35 25% 75%;          /* #C9B896 - Rich caramel accent */
+    --golden-cream: 40 30% 85%;     /* #DDD4C0 - Golden cream highlight */
+    --soft-taupe: 30 8% 65%;        /* #A8A199 - Elegant soft taupe */
+    --warm-brown: 25 15% 35%;       /* #5C5248 - Warm brown for text */
+    
+    /* Additional colors for enhanced design */
+    --charcoal-gray: 210 10% 20%;   /* #2D2D2D - Dark text */
+    --peach-blush: 15 80% 85%;      /* #F5D5D0 - Soft peach */
+    --dusty-rose: 0 50% 75%;        /* #D9A5A5 - Dusty rose */
+    --sage-mist: 120 20% 85%;       /* #D9E8D9 - Soft sage */
+    --sage-green: 120 30% 60%;      /* #7CB342 - Sage green */
+    --mauve-purple: 270 40% 60%;    /* #B39DDB - Mauve purple */
+    --sunset-orange: 30 100% 60%;   /* #FF9800 - Sunset orange */
+    --vanilla-cream: 42 25% 96%;    /* #F8F5F0 - Vanilla cream */
+
+    /* Semantic Design System */
+    --background: linear-gradient(135deg, hsl(var(--warm-beige)), hsl(var(--golden-cream) / 0.5), hsl(var(--caramel) / 0.22));
+    --foreground: var(--warm-brown);
+
+    --card: var(--vanilla);
+    --card-foreground: var(--warm-brown);
+
+    --popover: var(--vanilla);
+    --popover-foreground: var(--warm-brown);
+
+    --primary: var(--caramel);
+    --primary-foreground: var(--cream);
+
+    --secondary: var(--warm-beige);
+    --secondary-foreground: var(--warm-brown);
+
+    --muted: var(--vanilla);
+    --muted-foreground: var(--soft-taupe);
+
+    --accent: var(--golden-cream);
+    --accent-foreground: var(--warm-brown);
+
+    --destructive: var(--caramel);
+    --destructive-foreground: var(--cream);
+
+    --border: var(--soft-taupe);
+    --input: var(--vanilla);
+    --ring: var(--caramel);
+
+    --radius: 0.75rem;
+
+    /* Brand-specific tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(var(--cream)), hsl(var(--golden-cream) / 0.4));
+    --sustainability-gradient: linear-gradient(135deg, hsl(var(--caramel)), hsl(var(--vanilla)));
+    --trust-gradient: linear-gradient(135deg, hsl(var(--warm-brown)), hsl(var(--caramel) / 0.3));
+
+    /* Parallax animation gradients */
+    --parallax-gradient: linear-gradient(135deg, hsl(var(--cream)), hsl(var(--golden-cream) / 0.5));
+    --floating-elements: linear-gradient(45deg, hsl(var(--golden-cream) / 0.3), hsl(var(--warm-beige) / 0.2));
+    
+    /* Shadows for depth */
+    --shadow-soft: 0 4px 20px hsl(var(--warm-brown) / 0.08);
+    --shadow-medium: 0 8px 25px hsl(var(--warm-brown) / 0.12);
+    --shadow-strong: 0 12px 40px hsl(var(--warm-brown) / 0.16);
+    --shadow-elegant: 0 10px 30px hsl(var(--warm-brown) / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground font-inter antialiased;
+    background: linear-gradient(135deg, hsl(var(--warm-beige)), hsl(var(--golden-cream) / 0.5), hsl(var(--caramel) / 0.22));
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-semibold text-foreground;
+  }
+}
+
+@layer components {
+  /* Macaron-inspired component styles */
+  .hero-section {
+    @apply relative overflow-hidden bg-gradient-to-br from-warm-beige via-golden-cream/50 to-caramel/15;
+    background-attachment: fixed;
+  }
+  
+  .parallax-bg {
+    @apply absolute inset-0 opacity-30;
+    background: var(--parallax-gradient);
+    animation: parallax-float 20s ease-in-out infinite;
+  }
+  
+  .floating-dots {
+    @apply absolute w-4 h-4 rounded-full;
+    background: hsl(var(--golden-cream));
+    box-shadow: 0 0 10px hsl(var(--caramel) / 0.4);
+    animation: float-up 3s ease-out;
+  }
+  
+  .growing-icon {
+    @apply transform transition-all duration-700 ease-out;
+    animation: grow-in 2s ease-out;
+  }
+  
+  .impact-card {
+    @apply bg-card text-card-foreground border border-border rounded-lg p-6 shadow-soft hover:shadow-medium transition-all duration-300;
+  }
+  
+  .donation-button {
+    @apply bg-caramel text-cream hover:bg-caramel/90 font-semibold px-8 py-4 rounded-lg shadow-medium hover:shadow-strong transition-all duration-300 transform hover:scale-105;
+    background: linear-gradient(135deg, hsl(var(--caramel)), hsl(var(--golden-cream)));
+  }
+  
+  .sustainability-accent {
+    @apply text-caramel border-caramel bg-caramel/10;
+  }
+
+  .success-highlight {
+    @apply text-caramel border-caramel bg-caramel/10;
+  }
+  
+  .trust-section {
+    @apply bg-gradient-to-r from-warm-brown/5 to-golden-cream/30;
+  }
+
+  .section-divider {
+    @apply border-t border-vanilla;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  .text-cream { color: hsl(var(--cream)); }
+  .text-vanilla { color: hsl(var(--vanilla)); }
+  .text-warm-beige { color: hsl(var(--warm-beige)); }
+  .text-caramel { color: hsl(var(--caramel)); }
+  .text-golden-cream { color: hsl(var(--golden-cream)); }
+  .text-soft-taupe { color: hsl(var(--soft-taupe)); }
+  .text-warm-brown { color: hsl(var(--warm-brown)); }
+  
+  .bg-cream { background-color: hsl(var(--cream)); }
+  .bg-vanilla { background-color: hsl(var(--vanilla)); }
+  .bg-warm-beige { background-color: hsl(var(--warm-beige)); }
+  .bg-caramel { background-color: hsl(var(--caramel)); }
+  .bg-golden-cream { background-color: hsl(var(--golden-cream)); }
+  .bg-soft-taupe { background-color: hsl(var(--soft-taupe)); }
+  .bg-warm-brown { background-color: hsl(var(--warm-brown)); }
+  
+  .border-cream { border-color: hsl(var(--cream)); }
+  .border-vanilla { border-color: hsl(var(--vanilla)); }
+  .border-warm-beige { border-color: hsl(var(--warm-beige)); }
+  .border-caramel { border-color: hsl(var(--caramel)); }
+  .border-golden-cream { border-color: hsl(var(--golden-cream)); }
+  .border-soft-taupe { border-color: hsl(var(--soft-taupe)); }
+  .border-warm-brown { border-color: hsl(var(--warm-brown)); }
+  
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-strong { box-shadow: var(--shadow-strong); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  
+  /* Parallax and Animation Classes */
+  .parallax-container {
+    @apply relative overflow-hidden;
+    perspective: 1000px;
+  }
+  
+  .parallax-layer {
+    @apply absolute inset-0;
+    transform-style: preserve-3d;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes parallax-float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  33% { transform: translateY(-10px) scale(1.02); }
+  66% { transform: translateY(5px) scale(0.98); }
+}
+
+@keyframes float-up {
+  0% { 
+    opacity: 0; 
+    transform: translateY(50px) scale(0.8); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: translateY(-20px) scale(1.1); 
+  }
+  100% { 
+    opacity: 0.8; 
+    transform: translateY(-100px) scale(1); 
+  }
+}
+
+@keyframes grow-in {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.5) translateY(30px); 
+  }
+  60% { 
+    opacity: 0.8; 
+    transform: scale(1.1) translateY(-5px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+}
+
+@keyframes fade-in {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--caramel) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--caramel) / 0.6);
+  }
+}
+
+@keyframes expand-impact {
+  0% { 
+    transform: scale(0) rotate(0deg); 
+    opacity: 0; 
+  }
+  50% { 
+    transform: scale(1.2) rotate(180deg); 
+    opacity: 0.8; 
+  }
+  100% { 
+    transform: scale(1) rotate(360deg); 
+    opacity: 1; 
+  }
+}
+
