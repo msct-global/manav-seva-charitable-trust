@@ -43,6 +43,18 @@ export default function RootLayout({
         <meta name="google-site-verification" content="1VrE983IVdtUgeOccAeUKHc92mlPq2xNBcGh4BiOL_o" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FNE3E9CEX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5FNE3E9CEX');
+            `,
+          }}
+        />
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
