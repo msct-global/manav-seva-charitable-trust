@@ -113,7 +113,7 @@ const RupeeRevolutionSection = () => {
 
               {/* Direct UPI Link Button */}
               <a
-                href="upi://pay?pa=manavseva2025@sbi&pn=ManavSevaCharitableTrust&am=1.00&cu=INR&tn=Donation&tr=MSCT001"
+                href="upi://pay?pa=manavseva2025@sbi&pn=Manav%20Seva%20Charitable%20Trust&cu=INR&am=1&mc=7407&mode=02&purpose=00&orgid=180102"
                 className="block"
               >
                 <Button className="w-full donation-button text-lg py-6">
