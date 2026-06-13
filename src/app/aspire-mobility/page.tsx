@@ -10,6 +10,7 @@ import { Heart, Check, Users, Award, Zap, ChevronRight, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AspireConsultationForm from '@/components/AspireConsultationForm';
+import CampaignSupportModal from '@/components/CampaignSupportModal';
 
 const steps = [
   { num: 1, title: 'Consultation', desc: 'Understanding medical history and needs', icon: '💬' },
@@ -26,9 +27,9 @@ const benefits = [
 ];
 
 export default function AspireMobilityPage() {
-  const [donationType, setDonationType] = useState('one-time');
-  const [progress] = useState({ current: 32500, target: 50000 });
+  const [progress] = useState({ current: 0, target: 50000 });
   const [showConsultationForm, setShowConsultationForm] = useState(false);
+  const [showCampaignModal, setShowCampaignModal] = useState(false);
 
   const progressPct = (progress.current / progress.target) * 100;
 
@@ -308,9 +309,12 @@ export default function AspireMobilityPage() {
                     </div>
                   </div>
                   <div className="bg-green-50 p-4 rounded-lg">
-                    <p className="text-green-700 font-semibold">Lives Helped: 5+</p>
+                    <p className="text-green-700 font-semibold">Lives Helped: 0</p>
                   </div>
-                  <Button className="w-full bg-sage-green text-white py-3 text-lg hover:bg-sage-green/90">
+                  <Button
+                    onClick={() => setShowCampaignModal(true)}
+                    className="w-full bg-sage-green text-white py-3 text-lg hover:bg-sage-green/90"
+                  >
                     Support Campaign
                   </Button>
                 </CardContent>
@@ -566,6 +570,17 @@ export default function AspireMobilityPage() {
             </div>
           </div>
         )}
+
+        {/* Campaign Support Modal */}
+        <CampaignSupportModal
+          isOpen={showCampaignModal}
+          onClose={() => setShowCampaignModal(false)}
+          campaignName="Aspire Mobility - Prosthetics"
+          campaignId="aspire-mobility"
+          targetAmount={50000}
+          currentAmount={progress.current}
+          whatsappNumber="7976892938"
+        />
       </main>
       <Footer />
     </div>
