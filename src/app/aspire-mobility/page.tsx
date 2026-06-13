@@ -135,13 +135,16 @@ export default function AspireMobilityPage() {
             </div>
 
             {/* Core Message */}
-            <p className="text-lg md:text-xl text-warm-brown/90 font-medium leading-relaxed">
-              Prosthetics at <span className="text-caramel font-bold text-2xl">70% below market rate</span>
-              <br />
-              <span className="text-charcoal-gray/70 text-base mt-2 block">
+            <div className="space-y-6">
+              <p className="text-lg md:text-xl text-warm-brown/90 font-medium">
+                Prosthetics at <span className="text-caramel font-bold text-2xl">70% below market rate</span>
+              </p>
+
+              {/* Highlighted Message - Elegant Text Shadow */}
+              <p className="text-xl md:text-2xl text-sage-green font-serif italic font-light whitespace-nowrap" style={{ textShadow: '0 2px 6px rgba(92, 82, 72, 0.12)' }}>
                 Because every person deserves the chance to walk with dignity and independence
-              </span>
-            </p>
+              </p>
+            </div>
           </div>
         </section>
 
