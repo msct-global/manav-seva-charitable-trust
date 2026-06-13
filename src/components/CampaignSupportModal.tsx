@@ -173,15 +173,15 @@ export default function CampaignSupportModal({
 
   const renderDonateQRStep = () => (
     <div className="space-y-6">
-      <p className="text-sm text-charcoal-gray/80">Scan QR code to donate ₹{selectedAmount.toLocaleString()}</p>
+      <p className="text-sm font-semibold text-sunset-orange drop-shadow-sm">Scan QR code to donate ₹{selectedAmount.toLocaleString()}</p>
 
-      {/* QR Code Display */}
-      <div className="bg-white p-6 rounded-lg flex flex-col items-center justify-center">
+      {/* QR Code Display - No Background */}
+      <div className="flex flex-col items-center justify-center py-4">
         <Image
           src="/qr.png"
           alt="Payment QR Code"
-          width={250}
-          height={250}
+          width={280}
+          height={280}
           priority
           className="rounded-lg"
         />
