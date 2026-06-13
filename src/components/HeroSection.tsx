@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="hero-section min-h-screen flex items-center parallax-container">
+    <section className="hero-section min-h-screen flex items-center parallax-container -mt-32 pt-32">
       {/* Parallax Background Layers */}
       <div className="parallax-bg"></div>
       

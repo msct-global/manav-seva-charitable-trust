@@ -15,8 +15,9 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: '₹1 Revolution', path: '/revolution' },
     { name: 'Our Impact', path: '/impact' },
+    { name: 'Projects', path: '/projects' },
     { name: 'Blog', path: '/blog' },
-    { name: 'About Us', path: '/about' },
+    { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -30,15 +31,9 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav className={`
-      sticky top-0 z-50 transition-all duration-300 ease-in-out
-      ${isScrolled
-        ? 'bg-cream/80 backdrop-blur-md shadow-medium border-b border-soft-taupe/30'
-        : 'bg-cream/70 backdrop-blur-sm shadow-soft border-b border-soft-taupe/20'
-      }
-    `}>
+    <nav className="sticky top-0 z-50 transition-all duration-300 ease-in-out py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-18 lg:h-20">
+        <div className="flex justify-between items-center">
           {/* Left Section - Logo */}
           <div className="flex items-center flex-shrink-0">
             <div className="bg-white/30 backdrop-blur-sm rounded-full px-4 py-3 shadow-soft border border-white/20">
@@ -60,14 +55,14 @@ const Navigation = () => {
           </div>
 
           {/* Center Section - Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-center flex-1 max-w-2xl mx-8">
-            <div className="flex items-center space-x-1 bg-white/30 backdrop-blur-sm rounded-full px-6 py-3 shadow-soft border border-white/20">
+          <div className="hidden lg:flex items-center justify-center flex-1 mx-6">
+            <div className="flex items-center space-x-0.5 bg-white/30 backdrop-blur-sm rounded-full px-4 py-3 shadow-soft border border-white/20">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.path}
                   className={`
-                    relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-in-out
+                    relative px-3 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out whitespace-nowrap
                     ${pathname === item.path
                       ? 'text-warm-brown bg-white/60 shadow-soft backdrop-blur-sm'
                       : 'text-warm-brown/80 hover:text-warm-brown hover:bg-white/40'
@@ -109,7 +104,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="absolute top-full left-0 right-0 bg-cream/95 backdrop-blur-md border-b border-soft-taupe/30 shadow-medium">
+            <div className="absolute top-full left-4 right-4 bg-cream/95 backdrop-blur-md border border-soft-taupe/30 shadow-medium rounded-2xl mt-2 mx-auto max-w-sm">
               <div className="max-w-7xl mx-auto px-4 py-6">
                 <div className="flex flex-col space-y-1">
                   {navItems.map((item) => (

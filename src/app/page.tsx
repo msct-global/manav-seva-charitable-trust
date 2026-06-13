@@ -9,10 +9,10 @@ import ScrollToTop from '@/components/ScrollToTop';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <ScrollToTop />
       <Navigation />
-      <main>
+      <main className="relative">
         <HeroSection />
         <GrowingImpactSection />
         <OurStorySection />
