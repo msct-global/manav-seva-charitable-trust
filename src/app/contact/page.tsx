@@ -45,7 +45,7 @@ const contactInfo = [
 const socialLinks = [
   { icon: <Facebook className="h-6 w-6" />, name: "Facebook", url: "#", color: "hover:text-blue-600" },
   { icon: <Twitter className="h-6 w-6" />, name: "Twitter", url: "#", color: "hover:text-blue-400" },
-  { icon: <Instagram className="h-6 w-6" />, name: "Instagram", url: "#", color: "hover:text-pink-600" },
+  { icon: <Instagram className="h-6 w-6" />, name: "Instagram", url: "https://www.instagram.com/msct_global/", color: "hover:text-pink-600" },
   { icon: <Linkedin className="h-6 w-6" />, name: "LinkedIn", url: "#", color: "hover:text-blue-700" }
 ];
 

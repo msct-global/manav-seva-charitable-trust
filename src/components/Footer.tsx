@@ -101,7 +101,7 @@ const Footer = () => {
                 <a href="#" className="p-2 bg-cream/10 rounded-full hover:bg-caramel/20 transition-colors">
                   <Twitter className="h-4 w-4" />
                 </a>
-                <a href="#" className="p-2 bg-cream/10 rounded-full hover:bg-caramel/20 transition-colors">
+                <a href="https://www.instagram.com/msct_global/" target="_blank" rel="noopener noreferrer" className="p-2 bg-cream/10 rounded-full hover:bg-caramel/20 transition-colors">
                   <Instagram className="h-4 w-4" />
                 </a>
                 <a href="#" className="p-2 bg-cream/10 rounded-full hover:bg-caramel/20 transition-colors">

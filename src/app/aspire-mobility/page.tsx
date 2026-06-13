@@ -6,9 +6,10 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Heart, Check, Users, Award, Zap, ChevronRight } from 'lucide-react';
+import { Heart, Check, Users, Award, Zap, ChevronRight, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import AspireConsultationForm from '@/components/AspireConsultationForm';
 
 const steps = [
   { num: 1, title: 'Consultation', desc: 'Understanding medical history and needs', icon: '💬' },
@@ -27,6 +28,7 @@ const benefits = [
 export default function AspireMobilityPage() {
   const [donationType, setDonationType] = useState('one-time');
   const [progress] = useState({ current: 32500, target: 50000 });
+  const [showConsultationForm, setShowConsultationForm] = useState(false);
 
   const progressPct = (progress.current / progress.target) * 100;
 
@@ -263,17 +265,25 @@ export default function AspireMobilityPage() {
                 <CardContent className="space-y-6">
                   <p className="text-charcoal-gray/80">For someone ready to get a prosthetic now</p>
                   <ul className="space-y-3">
-                    {['Immediate consultation', 'Customized fitting', 'Professional training', 'Lifetime support'].map((item, i) => (
-                      <li key={i} className="flex gap-2">
-                        <Check className="h-5 w-5 text-green-600 flex-shrink-0" />
-                        <span className="text-charcoal-gray">{item}</span>
+                    {[
+                      { text: 'Immediate consultation', emoji: '✨' },
+                      { text: 'Customized fitting', emoji: '🎯' },
+                      { text: 'Professional training', emoji: '👣' },
+                      { text: 'Lifetime support', emoji: '💪' }
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-3">
+                        <span className="text-xl flex-shrink-0">{item.emoji}</span>
+                        <span className="text-charcoal-gray">{item.text}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full bg-mauve-purple text-white py-3 text-lg hover:bg-mauve-purple/90">
+                  <Button
+                    onClick={() => setShowConsultationForm(true)}
+                    className="w-full bg-mauve-purple text-white py-3 text-lg hover:bg-mauve-purple/90"
+                  >
                     Ready to Walk Again?
                   </Button>
-                  <p className="text-sm text-charcoal-gray/70">Contact MSCT to get started</p>
+                  <p className="text-sm text-charcoal-gray/70">Fill the form and chat with us on WhatsApp</p>
                 </CardContent>
               </Card>
 
@@ -359,7 +369,7 @@ export default function AspireMobilityPage() {
                 <div className="grid md:grid-cols-2 gap-6 mt-8">
                   <div className="space-y-3">
                     <h3 className="text-xl font-bold text-charcoal-gray flex items-center gap-2">
-                      <span className="text-2xl">✅</span>संवेदनशील और अनुभवी टीम
+                      <span className="text-2xl">👨‍⚕️</span>संवेदनशील और अनुभवी टीम
                     </h3>
                     <p className="text-charcoal-gray/70">
                       Experienced prosthetist & rehab team
@@ -367,7 +377,7 @@ export default function AspireMobilityPage() {
                   </div>
                   <div className="space-y-3">
                     <h3 className="text-xl font-bold text-charcoal-gray flex items-center gap-2">
-                      <span className="text-2xl">✅</span>विशेषज्ञ द्वारा फिटिंग और ट्रेनिंग
+                      <span className="text-2xl">🎯</span>विशेषज्ञ द्वारा फिटिंग और ट्रेनिंग
                     </h3>
                     <p className="text-charcoal-gray/70">
                       Advanced materials and alignment techniques
@@ -375,7 +385,7 @@ export default function AspireMobilityPage() {
                   </div>
                   <div className="space-y-3">
                     <h3 className="text-xl font-bold text-charcoal-gray flex items-center gap-2">
-                      <span className="text-2xl">✅</span>नए मरीजों और परिवारों के लिए पूरी सहायता
+                      <span className="text-2xl">🤝</span>नए मरीजों और परिवारों के लिए पूरी सहायता
                     </h3>
                     <p className="text-charcoal-gray/70">
                       Patient-first approach
@@ -383,7 +393,7 @@ export default function AspireMobilityPage() {
                   </div>
                   <div className="space-y-3">
                     <h3 className="text-xl font-bold text-charcoal-gray flex items-center gap-2">
-                      <span className="text-2xl">✅</span>आधुनिक और हल्के कार्बन फाइबर क्रिम/नकली पैर
+                      <span className="text-2xl">⚙️</span>आधुनिक और हल्के कार्बन फाइबर क्रिम/नकली पैर
                     </h3>
                     <p className="text-charcoal-gray/70">
                       Support through every step of recovery
@@ -536,6 +546,26 @@ export default function AspireMobilityPage() {
             </div>
           </div>
         </section>
+
+        {/* Consultation Form Modal */}
+        {showConsultationForm && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+              <div className="sticky top-0 bg-white border-b p-4 flex items-center justify-between">
+                <h2 className="text-xl font-bold text-warm-brown">Patient Consultation Form</h2>
+                <button
+                  onClick={() => setShowConsultationForm(false)}
+                  className="text-charcoal-gray/70 hover:text-charcoal-gray"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="p-6">
+                <AspireConsultationForm />
+              </div>
+            </div>
+          </div>
+        )}
       </main>
       <Footer />
     </div>
