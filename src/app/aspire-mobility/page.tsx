@@ -141,7 +141,7 @@ export default function AspireMobilityPage() {
               </p>
 
               {/* Highlighted Message - Elegant Text Shadow */}
-              <p className="text-xl md:text-2xl text-sage-green font-serif italic font-light whitespace-nowrap" style={{ textShadow: '0 2px 6px rgba(92, 82, 72, 0.12)' }}>
+              <p className="text-lg md:text-2xl text-sage-green font-serif italic font-light leading-relaxed" style={{ textShadow: '0 2px 6px rgba(92, 82, 72, 0.12)' }}>
                 Because every person deserves the chance to walk with dignity and independence
               </p>
             </div>
